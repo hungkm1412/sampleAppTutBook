@@ -6,9 +6,11 @@ gem 'rails', '3.1.3'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'mysql2'
 
 gem 'factory_girl_rails', '1.0'
 gem 'gravatar_image_tag', '1.0.0.pre2'
+gem 'will_paginate', '3.0.pre2'
 
 # Gems used only for assets and not required
 # in production environments by default.
