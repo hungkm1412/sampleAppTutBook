@@ -7,16 +7,13 @@ class Micropost < ActiveRecord::Base
   validates :user_id, :presence => true
   
   default_scope :order => 'microposts.created_at DESC'
-  
-  def self.from_users_followed_by(user)
-    where(:user_id => user.following.push(user))
-  end
-  
-  default_scope :order => 'microposts.created_at DESC'
-
   # Return microposts from the users being followed by the given user.
   scope :from_users_followed_by, lambda { |user| followed_by(user) }
-
+  
+  #def self.from_users_followed_by(user)
+    #where(:user_id => user.following.push(user))
+  #end
+  
   private
 
     # Return an SQL condition for users followed by the given user.
